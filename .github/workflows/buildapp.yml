@@ -54,7 +54,7 @@ concurrency:
 jobs:
   build:
     name: Build YTLitePlus
-    runs-on: macos-13
+    runs-on: macos-14
     permissions:
       contents: write
 
@@ -91,7 +91,7 @@ jobs:
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
           # Only download the specific SDK version
-          git clone -n --depth=1 --filter=tree:0 https://github.com/aricloverALT/sdks/
+          git clone -n --depth=1 --filter=tree:0 https://github.com/xybp888/iOS-SDKs
           cd sdks
           git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
           git checkout
